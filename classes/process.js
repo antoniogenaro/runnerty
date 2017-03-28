@@ -134,7 +134,9 @@ class Process {
       }
     }
 
-    var values = Object.assign(process_values, _this.execute_input);
+    var values = {};
+    values = Object.assign(values, process_values);
+    values = Object.assign(values, _this.execute_input);
     values = Object.assign(values, _this.custom_values);
     return values;
   }
@@ -189,7 +191,6 @@ class Process {
 
   loadExecutorConfig() {
     var _this = this;
-
     return loadConfigSection(global.config, 'executors', _this.exec.id);
   }
 
