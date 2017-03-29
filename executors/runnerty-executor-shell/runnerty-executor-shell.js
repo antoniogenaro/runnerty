@@ -28,8 +28,6 @@ class shellExecutor extends Execution {
           shell.execute_args = (shell.execute_args?shell.execute_args + ' ':'') + args[i];
         }
       }
-
-      shell.execute_args = args;
       shell.proc = spawn(cmd, shell.execute_args, {shell: true});
       shell.command_executed = cmd + ' ' + shell.execute_args;
       endOptions.command_executed = shell.command_executed;
