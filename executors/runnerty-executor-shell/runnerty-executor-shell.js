@@ -22,6 +22,13 @@ class shellExecutor extends Execution {
       var [args, execValues] = await Promise.all([_this.getArgs(), _this.getValues()]);
 
       var cmd = execValues.command;
+
+      if (args instanceof Array){
+        for (var i = 0; i < args.length; i++) {
+          shell.execute_args = (shell.execute_args?shell.execute_args + ' ':'') + args[i];
+        }
+      }
+
       shell.execute_args = args;
       shell.proc = spawn(cmd, shell.execute_args, {shell: true});
       shell.command_executed = cmd + ' ' + shell.execute_args;
