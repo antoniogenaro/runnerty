@@ -22,7 +22,7 @@ class shellExecutor extends Execution {
       var [args, execValues] = await Promise.all([_this.getArgs(), _this.getValues()]);
 
       var cmd = execValues.command;
-
+      shell.execute_args = '';
       if (args instanceof Array){
         for (var i = 0; i < args.length; i++) {
           shell.execute_args = (shell.execute_args?shell.execute_args + ' ':'') + args[i];
