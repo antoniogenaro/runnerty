@@ -21,8 +21,8 @@
       "required": ["id","file"],
       "properties":{
         "id": {"type": "string"},
-        "file": {"type": "string"},
-        "file_name": {"type": "string"},
+        "local_file": {"type": "string"},
+        "remote_file": {"type": "string"},
         "method": {"type": "string"},
         "bucket": {"type": "string"}
       }
